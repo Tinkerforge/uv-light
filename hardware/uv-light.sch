@@ -48,47 +48,6 @@ $EndDescr
 Text Notes 600  7650 0    40   ~ 0
 Copyright Tinkerforge GmbH 2015.\nThis documentation describes Open Hardware and is licensed under the\nCERN OHL v. 1.1.\nYou may redistribute and modify this documentation under the terms of the\nCERN OHL v.1.1. (http://ohwr.org/cernohl). This documentation is distributed\nWITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF\nMERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A\nPARTICULAR PURPOSE. Please see the CERN OHL v.1.1 for applicable\nconditions\n
 NoConn ~ 4000 3100
-Wire Wire Line
-	4150 3050 4150 3300
-Wire Wire Line
-	4150 3300 4000 3300
-Wire Wire Line
-	5150 4650 5150 4550
-Wire Wire Line
-	5150 4850 5600 4850
-Wire Wire Line
-	4000 3500 4350 3500
-Connection ~ 4250 4950
-Wire Wire Line
-	4250 4750 4350 4750
-Wire Wire Line
-	4350 4850 4150 4850
-Wire Wire Line
-	4150 4850 4150 3600
-Wire Wire Line
-	4150 3600 4000 3600
-Wire Wire Line
-	3550 4250 3550 4150
-Wire Wire Line
-	4250 4950 4350 4950
-Wire Wire Line
-	4250 5050 4250 4650
-Wire Wire Line
-	4250 4650 4350 4650
-Connection ~ 4250 4750
-Wire Wire Line
-	4000 3400 4350 3400
-Wire Wire Line
-	5150 4950 5600 4950
-Wire Wire Line
-	5600 4550 5600 4650
-Wire Wire Line
-	5150 4550 5200 4550
-Connection ~ 5150 4550
-Wire Wire Line
-	4000 3200 4250 3200
-Wire Wire Line
-	4250 3200 4250 3350
 NoConn ~ 5150 4750
 $Comp
 L GND #PWR01
@@ -244,37 +203,25 @@ $EndComp
 $Comp
 L GND #PWR07
 U 1 1 551D44C3
-P 6900 4050
-F 0 "#PWR07" H 6900 4050 30  0001 C CNN
-F 1 "GND" H 6900 3980 30  0001 C CNN
-F 2 "" H 6900 4050 60  0001 C CNN
-F 3 "" H 6900 4050 60  0001 C CNN
-	1    6900 4050
+P 6300 3850
+F 0 "#PWR07" H 6300 3850 30  0001 C CNN
+F 1 "GND" H 6300 3780 30  0001 C CNN
+F 2 "" H 6300 3850 60  0001 C CNN
+F 3 "" H 6300 3850 60  0001 C CNN
+	1    6300 3850
 	1    0    0    -1  
 $EndComp
 $Comp
 L C C2
 U 1 1 551D450D
-P 6900 3700
-F 0 "C2" V 6750 3700 50  0000 L CNN
-F 1 "100nF" V 7050 3600 50  0000 L CNN
-F 2 "kicad-libraries:0603" H 6900 3700 60  0001 C CNN
-F 3 "" H 6900 3700 60  0001 C CNN
-	1    6900 3700
+P 6650 3250
+F 0 "C2" V 6500 3250 50  0000 L CNN
+F 1 "100nF" V 6800 3150 50  0000 L CNN
+F 2 "kicad-libraries:0603" H 6650 3250 60  0001 C CNN
+F 3 "" H 6650 3250 60  0001 C CNN
+	1    6650 3250
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	5900 3300 5250 3300
-Wire Wire Line
-	5250 3300 5250 3700
-Wire Wire Line
-	5250 3700 4000 3700
-Wire Wire Line
-	4000 3800 5350 3800
-Wire Wire Line
-	5350 3800 5350 3400
-Wire Wire Line
-	5350 3400 5900 3400
 $Comp
 L VCC #PWR08
 U 1 1 551D479C
@@ -287,51 +234,6 @@ F 3 "" H 5650 2650 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Si1132 U2
-U 1 1 55B9FDD2
-P 6250 3600
-F 0 "U2" H 6100 4050 60  0000 C CNN
-F 1 "Si1132" H 6250 3100 60  0000 C CNN
-F 2 "kicad-libraries:QFN-10" H 7500 2600 60  0001 C CNN
-F 3 "" H 7500 2600 60  0000 C CNN
-	1    6250 3600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4000 3900 5450 3900
-Wire Wire Line
-	5450 3900 5450 3500
-Wire Wire Line
-	5450 3500 5900 3500
-NoConn ~ 5900 3600
-NoConn ~ 5900 3700
-$Comp
-L VCC #PWR09
-U 1 1 55B9FF97
-P 6900 3200
-F 0 "#PWR09" H 6900 3300 30  0001 C CNN
-F 1 "VCC" H 6900 3300 30  0000 C CNN
-F 2 "" H 6900 3200 60  0001 C CNN
-F 3 "" H 6900 3200 60  0001 C CNN
-	1    6900 3200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6900 4050 6900 3900
-Wire Wire Line
-	6900 3900 6600 3900
-Wire Wire Line
-	6600 3300 6600 3600
-Wire Wire Line
-	6600 3450 6900 3450
-Wire Wire Line
-	6900 3200 6900 3500
-Connection ~ 6600 3450
-Connection ~ 6900 3450
-Connection ~ 6600 3400
-Connection ~ 6600 3500
-Connection ~ 6900 3900
-$Comp
 L R_PACK4 RP1
 U 1 1 55BA021C
 P 5450 2950
@@ -342,6 +244,134 @@ F 3 "" H 5450 2950 60  0000 C CNN
 	1    5450 2950
 	0    1    1    0   
 $EndComp
+NoConn ~ 5600 3150
+$Comp
+L R R2
+U 1 1 55DCA927
+P 7450 3050
+F 0 "R2" V 7530 3050 50  0000 C CNN
+F 1 "10" V 7450 3050 50  0000 C CNN
+F 2 "kicad-libraries:0603" H 7450 3050 60  0001 C CNN
+F 3 "" H 7450 3050 60  0000 C CNN
+	1    7450 3050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C3
+U 1 1 55DCAA55
+P 7050 3250
+F 0 "C3" V 6900 3250 50  0000 L CNN
+F 1 "10µF" V 7200 3150 50  0000 L CNN
+F 2 "kicad-libraries:0603" H 7050 3250 60  0001 C CNN
+F 3 "" H 7050 3250 60  0001 C CNN
+	1    7050 3250
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR09
+U 1 1 55DCAB0B
+P 6650 3850
+F 0 "#PWR09" H 6650 3850 30  0001 C CNN
+F 1 "GND" H 6650 3780 30  0001 C CNN
+F 2 "" H 6650 3850 60  0001 C CNN
+F 3 "" H 6650 3850 60  0001 C CNN
+	1    6650 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR010
+U 1 1 55DCAB26
+P 7050 3850
+F 0 "#PWR010" H 7050 3850 30  0001 C CNN
+F 1 "GND" H 7050 3780 30  0001 C CNN
+F 2 "" H 7050 3850 60  0001 C CNN
+F 3 "" H 7050 3850 60  0001 C CNN
+	1    7050 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR011
+U 1 1 55DCAC7F
+P 7700 2950
+F 0 "#PWR011" H 7700 3050 30  0001 C CNN
+F 1 "VCC" H 7700 3050 30  0000 C CNN
+F 2 "" H 7700 2950 60  0001 C CNN
+F 3 "" H 7700 2950 60  0001 C CNN
+	1    7700 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 55DCACDB
+P 5700 3850
+F 0 "R1" V 5780 3850 50  0000 C CNN
+F 1 "270k" V 5700 3850 50  0000 C CNN
+F 2 "kicad-libraries:0603" H 5700 3850 60  0001 C CNN
+F 3 "" H 5700 3850 60  0000 C CNN
+	1    5700 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR012
+U 1 1 55DCADB7
+P 5700 4150
+F 0 "#PWR012" H 5700 4150 30  0001 C CNN
+F 1 "GND" H 5700 4080 30  0001 C CNN
+F 2 "" H 5700 4150 60  0001 C CNN
+F 3 "" H 5700 4150 60  0001 C CNN
+	1    5700 4150
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4000 4000
+Wire Wire Line
+	4150 3050 4150 3300
+Wire Wire Line
+	4150 3300 4000 3300
+Wire Wire Line
+	5150 4650 5150 4550
+Wire Wire Line
+	5150 4850 5600 4850
+Wire Wire Line
+	4000 3500 4350 3500
+Connection ~ 4250 4950
+Wire Wire Line
+	4250 4750 4350 4750
+Wire Wire Line
+	4350 4850 4150 4850
+Wire Wire Line
+	4150 4850 4150 3600
+Wire Wire Line
+	4150 3600 4000 3600
+Wire Wire Line
+	3550 4250 3550 4150
+Wire Wire Line
+	4250 4950 4350 4950
+Wire Wire Line
+	4250 5050 4250 4650
+Wire Wire Line
+	4250 4650 4350 4650
+Connection ~ 4250 4750
+Wire Wire Line
+	4000 3400 4350 3400
+Wire Wire Line
+	5150 4950 5600 4950
+Wire Wire Line
+	5600 4550 5600 4650
+Wire Wire Line
+	5150 4550 5200 4550
+Connection ~ 5150 4550
+Wire Wire Line
+	4000 3200 4250 3200
+Wire Wire Line
+	4250 3200 4250 3350
+Wire Wire Line
+	5900 3300 5250 3300
+Wire Wire Line
+	5350 3400 5350 3900
+Wire Wire Line
+	5350 3400 5900 3400
+Wire Wire Line
+	4800 3500 5900 3500
 Wire Wire Line
 	5700 2750 5700 2700
 Wire Wire Line
@@ -358,12 +388,51 @@ Wire Wire Line
 	5500 2700 5500 2750
 Connection ~ 5600 2700
 Wire Wire Line
-	5500 3500 5500 3150
-Connection ~ 5500 3500
+	6300 3850 6300 3750
 Wire Wire Line
-	5700 3150 5700 3400
-Connection ~ 5700 3400
+	7050 3850 7050 3450
 Wire Wire Line
-	5800 3150 5800 3300
+	6650 3850 6650 3450
+Wire Wire Line
+	6300 3150 6300 3050
+Wire Wire Line
+	6300 3050 7200 3050
+Wire Wire Line
+	7700 3050 7700 2950
+Connection ~ 6650 3050
+Connection ~ 7050 3050
+Wire Wire Line
+	5700 4150 5700 4100
+Wire Wire Line
+	5900 3600 5700 3600
+Wire Wire Line
+	5500 3150 5500 3400
+Connection ~ 5500 3400
+Wire Wire Line
+	5350 3900 4000 3900
+Wire Wire Line
+	4800 3500 4800 3700
+Wire Wire Line
+	4800 3700 4000 3700
+Wire Wire Line
+	4000 3800 5250 3800
+Wire Wire Line
+	5250 3800 5250 3300
+$Comp
+L VEML6070 U2
+U 1 1 55DCA3A5
+P 5800 3850
+F 0 "U2" H 6050 4500 60  0000 C CNN
+F 1 "VEML6070" H 6000 4000 60  0000 C CNN
+F 2 "kicad-libraries:OPLGA6" H 5800 3850 60  0001 C CNN
+F 3 "" H 5800 3850 60  0000 C CNN
+	1    5800 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 3300 5800 3150
 Connection ~ 5800 3300
+Wire Wire Line
+	5700 3150 5700 3500
+Connection ~ 5700 3500
 $EndSCHEMATC
