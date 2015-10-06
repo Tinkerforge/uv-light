@@ -49,15 +49,15 @@
 #define I2C_READ  1
 #define I2C_WRITE 0
 
-#define FID_GET_UV_INDEX 1
-#define FID_SET_UV_INDEX_CALLBACK_PERIOD 2
-#define FID_GET_UV_INDEX_CALLBACK_PERIOD 3
-#define FID_SET_UV_INDEX_CALLBACK_THRESHOLD 4
-#define FID_GET_UV_INDEX_CALLBACK_THRESHOLD 5
+#define FID_GET_UV_LIGHT 1
+#define FID_SET_UV_LIGHT_CALLBACK_PERIOD 2
+#define FID_GET_UV_LIGHT_CALLBACK_PERIOD 3
+#define FID_SET_UV_LIGHT_CALLBACK_THRESHOLD 4
+#define FID_GET_UV_LIGHT_CALLBACK_THRESHOLD 5
 #define FID_SET_DEBOUNCE_PERIOD 6
 #define FID_GET_DEBOUNCE_PERIOD 7
-#define FID_UV_INDEX 8
-#define FID_UV_INDEX_REACHED 9
+#define FID_UV_LIGHT 8
+#define FID_UV_LIGHT_REACHED 9
 
 #define FID_LAST 23
 
@@ -69,7 +69,7 @@ void constructor(void);
 void destructor(void);
 void tick(const uint8_t tick_type);
 
-uint16_t veml6070_read_uv_index(void);
+uint32_t veml6070_read_uv_light(void);
 void veml6070_write_configuration(const uint8_t configuration);
 bool i2c_scl_value(void);
 void i2c_scl_high(void);

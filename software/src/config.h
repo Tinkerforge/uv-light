@@ -54,7 +54,7 @@
 #define INVOCATION_IN_BRICKLET_CODE
 #define NUM_SIMPLE_VALUES 1
 
-#define SIMPLE_VALUE_TYPE uint16_t
+#define SIMPLE_VALUE_TYPE uint32_t
 
 typedef struct {
 	uint32_t value[NUM_SIMPLE_VALUES];

@@ -32,22 +32,22 @@
 
 #define ILLUMINANCE_AVERAGE 50
 
-#define SIMPLE_UNIT_UV_INDEX 0
+#define SIMPLE_UNIT_UV_LIGHT 0
 #define SIMPLE_UNIT_IR_VALUE 1
 #define SIMPLE_UNIT_ILLUMINANCE 2
 
 const SimpleMessageProperty smp[] = {
-	{SIMPLE_UNIT_UV_INDEX, SIMPLE_TRANSFER_VALUE, SIMPLE_DIRECTION_GET}, // TYPE_GET_UV_INDEX
-	{SIMPLE_UNIT_UV_INDEX, SIMPLE_TRANSFER_PERIOD, SIMPLE_DIRECTION_SET}, // TYPE_SET_UV_INDEX_CALLBACK_PERIOD
-	{SIMPLE_UNIT_UV_INDEX, SIMPLE_TRANSFER_PERIOD, SIMPLE_DIRECTION_GET}, // TYPE_GET_UV_INDEX_CALLBACK_PERIOD
-	{SIMPLE_UNIT_UV_INDEX, SIMPLE_TRANSFER_THRESHOLD, SIMPLE_DIRECTION_SET}, // TYPE_SET_UV_INDEX_CALLBACK_THRESHOLD
-	{SIMPLE_UNIT_UV_INDEX, SIMPLE_TRANSFER_THRESHOLD, SIMPLE_DIRECTION_GET}, // TYPE_GET_UV_INDEX_CALLBACK_THRESHOLD
+	{SIMPLE_UNIT_UV_LIGHT, SIMPLE_TRANSFER_VALUE, SIMPLE_DIRECTION_GET}, // TYPE_GET_UV_LIGHT
+	{SIMPLE_UNIT_UV_LIGHT, SIMPLE_TRANSFER_PERIOD, SIMPLE_DIRECTION_SET}, // TYPE_SET_UV_LIGHT_CALLBACK_PERIOD
+	{SIMPLE_UNIT_UV_LIGHT, SIMPLE_TRANSFER_PERIOD, SIMPLE_DIRECTION_GET}, // TYPE_GET_UV_LIGHT_CALLBACK_PERIOD
+	{SIMPLE_UNIT_UV_LIGHT, SIMPLE_TRANSFER_THRESHOLD, SIMPLE_DIRECTION_SET}, // TYPE_SET_UV_LIGHT_CALLBACK_THRESHOLD
+	{SIMPLE_UNIT_UV_LIGHT, SIMPLE_TRANSFER_THRESHOLD, SIMPLE_DIRECTION_GET}, // TYPE_GET_UV_LIGHT_CALLBACK_THRESHOLD
 	{0, SIMPLE_TRANSFER_DEBOUNCE, SIMPLE_DIRECTION_SET}, // TYPE_SET_DEBOUNCE_PERIOD
 	{0, SIMPLE_TRANSFER_DEBOUNCE, SIMPLE_DIRECTION_GET}, // TYPE_GET_DEBOUNCE_PERIOD
 };
 
 const SimpleUnitProperty sup[] = {
-	{NULL, SIMPLE_SIGNEDNESS_UINT, FID_UV_INDEX, FID_UV_INDEX_REACHED, SIMPLE_UNIT_UV_INDEX}, // uv index
+	{NULL, SIMPLE_SIGNEDNESS_UINT, FID_UV_LIGHT, FID_UV_LIGHT_REACHED, SIMPLE_UNIT_UV_LIGHT}, // uv light
 };
 
 const uint8_t smp_length = sizeof(smp);
@@ -90,14 +90,14 @@ void tick(const uint8_t tick_type) {
 	if(tick_type & TICK_TASK_TYPE_CALCULATION) {
 		if(BC->tick % 100 == 0) {
 			BC->last_value[0] = BC->value[0];
-			BC->value[0] = veml6070_read_uv_index();
+			BC->value[0] = veml6070_read_uv_light();
 		}
 	}
 
 	simple_tick(tick_type);
 }
 
-uint16_t veml6070_read_uv_index(void) {
+uint32_t veml6070_read_uv_light(void) {
 	uint16_t uv_value = 0;
 
 	i2c_start();
@@ -110,12 +110,11 @@ uint16_t veml6070_read_uv_index(void) {
 	uv_value |= (i2c_recv_byte(false) << 8);
 	i2c_stop();
 
-	// 1 step = 5 µW/cm² = 5*1000/10000 mW/m² = 0.5 mW/m²
-	// UV Index = mW/25m² = uv_value * 5*1000 / (10000*25) = uv_value / 50
-	// => UV Index/100 = uv_value*2
-
-	// Max value for uv_value is 328*50 = 16400. So *2 is OK here.
-	return uv_value*2;
+	// 1 step = 5 µW/cm²
+	// 187 steps per 1 UVI at 270k/IT=1T (according to application note table 2)
+	// Thus we can multiply by 250 (*25 for UVI to mW/m² and *10 for mW/m² to µW/cm²)
+	// and divide by 187 (see above) to get a unit of µW/cm²
+	return uv_value*250/187;
 }
 
 void veml6070_write_configuration(const uint8_t configuration) {
