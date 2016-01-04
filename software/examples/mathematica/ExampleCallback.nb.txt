@@ -1,0 +1,28 @@
+Needs["NETLink`"]
+LoadNETAssembly["Tinkerforge",NotebookDirectory[]<>"../../.."]
+
+host="localhost"
+port=4223
+uid="XYZ"(*Change to your UID*)
+
+(*Create IPConnection and device object*)
+ipcon=NETNew["Tinkerforge.IPConnection"]
+uvl=NETNew["Tinkerforge.BrickletUVLight",uid,ipcon]
+ipcon@Connect[host,port]
+
+(*Callback function for UV light callback (parameter has unit µW/cm²)*)
+UVLightCB[sender_,uvLight_]:=
+ Print["UV Light: "<>ToString[N[Quantity[uvLight,"µW/cm²"]]]]
+AddEventHandler[uvl@UVLight,UVLightCB]
+
+(*Set period for UV light callback to 1s (1000ms)*)
+(*Note: The UV light callback is only called every second*)
+(*if the UV light has changed since the last call!*)
+uvl@SetUVLightCallbackPeriod[1000]
+
+Input["Click OK to exit"]
+
+(*Clean up*)
+ipcon@Disconnect[]
+ReleaseNETObject[uvl]
+ReleaseNETObject[ipcon]

@@ -1,0 +1,40 @@
+var Tinkerforge = require('tinkerforge');
+
+var HOST = 'localhost';
+var PORT = 4223;
+var UID = 'XYZ'; // Change to your UID
+
+var ipcon = new Tinkerforge.IPConnection(); // Create IP connection
+var uvl = new Tinkerforge.BrickletUVLight(UID, ipcon); // Create device object
+
+ipcon.connect(HOST, PORT,
+    function (error) {
+        console.log('Error: ' + error);
+    }
+); // Connect to brickd
+// Don't use device before ipcon is connected
+
+ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
+    function (connectReason) {
+        // Set period for UV light callback to 1s (1000ms)
+        // Note: The UV light callback is only called every second
+        //       if the UV light has changed since the last call!
+        uvl.setUVLightCallbackPeriod(1000);
+    }
+);
+
+// Register UV light callback
+uvl.on(Tinkerforge.BrickletUVLight.CALLBACK_UV_LIGHT,
+    // Callback function for UV light callback (parameter has unit µW/cm²)
+    function (uvLight) {
+        console.log('UV Light: ' + uvLight + ' µW/cm²');
+    }
+);
+
+console.log('Press key to exit');
+process.stdin.on('data',
+    function (data) {
+        ipcon.disconnect();
+        process.exit(0);
+    }
+);

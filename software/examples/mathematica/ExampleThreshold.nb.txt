@@ -1,0 +1,34 @@
+Needs["NETLink`"]
+LoadNETAssembly["Tinkerforge",NotebookDirectory[]<>"../../.."]
+
+host="localhost"
+port=4223
+uid="XYZ"(*Change to your UID*)
+
+(*Create IPConnection and device object*)
+ipcon=NETNew["Tinkerforge.IPConnection"]
+uvl=NETNew["Tinkerforge.BrickletUVLight",uid,ipcon]
+ipcon@Connect[host,port]
+
+(*Get threshold callbacks with a debounce time of 10 seconds (10000ms)*)
+uvl@SetDebouncePeriod[10000]
+
+(*Callback function for UV light reached callback (parameter has unit µW/cm²)*)
+UVLightReachedCB[sender_,uvLight_]:=
+ Module[{},
+  Print["UV Light: "<>ToString[N[Quantity[uvLight,"µW/cm²"]]]];
+  Print["UV Index > 3. Use sunscreen!"]
+ ]
+
+AddEventHandler[uvl@UVLightReached,UVLightReachedCB]
+
+(*Configure threshold for UV light "greater than 750 µW/cm²" (unit is µW/cm²)*)
+option=Tinkerforge`BrickletUVLight`THRESHOLDUOPTIONUGREATER
+uvl@SetUVLightCallbackThreshold[option,750,0]
+
+Input["Click OK to exit"]
+
+(*Clean up*)
+ipcon@Disconnect[]
+ReleaseNETObject[uvl]
+ReleaseNETObject[ipcon]
