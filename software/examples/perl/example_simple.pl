@@ -5,7 +5,7 @@ use Tinkerforge::BrickletUVLight;
 
 use constant HOST => 'localhost';
 use constant PORT => 4223;
-use constant UID => 'XYZ'; # Change to your UID
+use constant UID => 'XYZ'; # Change XYZ to the UID of your UV Light Bricklet
 
 my $ipcon = Tinkerforge::IPConnection->new(); # Create IP connection
 my $uvl = Tinkerforge::BrickletUVLight->new(&UID, $ipcon); # Create device object

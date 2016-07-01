@@ -8,7 +8,7 @@ use Tinkerforge\BrickletUVLight;
 
 const HOST = 'localhost';
 const PORT = 4223;
-const UID = 'XYZ'; // Change to your UID
+const UID = 'XYZ'; // Change XYZ to the UID of your UV Light Bricklet
 
 // Callback function for UV light reached callback (parameter has unit µW/cm²)
 function cb_uvLightReached($uv_light)

@@ -8,7 +8,7 @@ use Tinkerforge\BrickletUVLight;
 
 const HOST = 'localhost';
 const PORT = 4223;
-const UID = 'XYZ'; // Change to your UID
+const UID = 'XYZ'; // Change XYZ to the UID of your UV Light Bricklet
 
 $ipcon = new IPConnection(); // Create IP connection
 $uvl = new BrickletUVLight(UID, $ipcon); // Create device object

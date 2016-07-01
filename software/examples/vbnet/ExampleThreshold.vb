@@ -4,7 +4,7 @@ Imports Tinkerforge
 Module ExampleThreshold
     Const HOST As String = "localhost"
     Const PORT As Integer = 4223
-    Const UID As String = "XYZ" ' Change to your UID
+    Const UID As String = "XYZ" ' Change XYZ to the UID of your UV Light Bricklet
 
     ' Callback subroutine for UV light reached callback (parameter has unit µW/cm²)
     Sub UVLightReachedCB(ByVal sender As BrickletUVLight, ByVal uvLight As Long)

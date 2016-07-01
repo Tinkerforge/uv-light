@@ -5,7 +5,7 @@
 
 #define HOST "localhost"
 #define PORT 4223
-#define UID "XYZ" // Change to your UID
+#define UID "XYZ" // Change XYZ to the UID of your UV Light Bricklet
 
 // Callback function for UV light reached callback (parameter has unit µW/cm²)
 void cb_uv_light_reached(uint32_t uv_light, void *user_data) {

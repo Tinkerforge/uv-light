@@ -5,7 +5,7 @@ class Example
 {
 	private static string HOST = "localhost";
 	private static int PORT = 4223;
-	private static string UID = "XYZ"; // Change to your UID
+	private static string UID = "XYZ"; // Change XYZ to the UID of your UV Light Bricklet
 
 	// Callback function for UV light reached callback (parameter has unit µW/cm²)
 	static void UVLightReachedCB(BrickletUVLight sender, long uvLight)
