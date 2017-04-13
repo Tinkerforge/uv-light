@@ -22,7 +22,7 @@ class Example
 		// Don't use device before ipcon is connected
 
 		// Register UV light callback to function UVLightCB
-		uvl.UVLight += UVLightCB;
+		uvl.UVLightCallback += UVLightCB;
 
 		// Set period for UV light callback to 1s (1000ms)
 		// Note: The UV light callback is only called every second

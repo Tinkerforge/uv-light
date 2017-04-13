@@ -26,7 +26,7 @@ class Example
 		uvl.SetDebouncePeriod(10000);
 
 		// Register UV light reached callback to function UVLightReachedCB
-		uvl.UVLightReached += UVLightReachedCB;
+		uvl.UVLightReachedCallback += UVLightReachedCB;
 
 		// Configure threshold for UV light "greater than 750 µW/cm²" (unit is µW/cm²)
 		uvl.SetUVLightCallbackThreshold('>', 750, 0);
