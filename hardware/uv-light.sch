@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:tinkerforge
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -10,7 +11,6 @@ LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
-LIBS:special
 LIBS:microcontrollers
 LIBS:dsp
 LIBS:microchip
@@ -29,8 +29,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:tinkerforge
-LIBS:uv-light-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -66,7 +64,7 @@ U 1 1 4CE147C5
 P 5400 4550
 F 0 "C1" V 5200 4550 50  0000 L CNN
 F 1 "100nF" V 5550 4550 50  0000 L CNN
-F 2 "kicad-libraries:0603" H 5400 4550 60  0001 C CNN
+F 2 "kicad-libraries:C0603" H 5400 4550 60  0001 C CNN
 F 3 "" H 5400 4550 60  0001 C CNN
 	1    5400 4550
 	0    1    1    0   
@@ -217,7 +215,7 @@ U 1 1 551D450D
 P 6650 3250
 F 0 "C2" V 6500 3250 50  0000 L CNN
 F 1 "100nF" V 6800 3150 50  0000 L CNN
-F 2 "kicad-libraries:0603" H 6650 3250 60  0001 C CNN
+F 2 "kicad-libraries:C0603" H 6650 3250 60  0001 C CNN
 F 3 "" H 6650 3250 60  0001 C CNN
 	1    6650 3250
 	-1   0    0    1   
@@ -251,7 +249,7 @@ U 1 1 55DCA927
 P 7450 3050
 F 0 "R2" V 7530 3050 50  0000 C CNN
 F 1 "10" V 7450 3050 50  0000 C CNN
-F 2 "kicad-libraries:0603" H 7450 3050 60  0001 C CNN
+F 2 "kicad-libraries:R0603" H 7450 3050 60  0001 C CNN
 F 3 "" H 7450 3050 60  0000 C CNN
 	1    7450 3050
 	0    -1   -1   0   
@@ -262,7 +260,7 @@ U 1 1 55DCAA55
 P 7050 3250
 F 0 "C3" V 6900 3250 50  0000 L CNN
 F 1 "10µF" V 7200 3150 50  0000 L CNN
-F 2 "kicad-libraries:0603" H 7050 3250 60  0001 C CNN
+F 2 "kicad-libraries:C0603" H 7050 3250 60  0001 C CNN
 F 3 "" H 7050 3250 60  0001 C CNN
 	1    7050 3250
 	-1   0    0    1   
@@ -306,7 +304,7 @@ U 1 1 55DCACDB
 P 5700 3850
 F 0 "R1" V 5780 3850 50  0000 C CNN
 F 1 "270k" V 5700 3850 50  0000 C CNN
-F 2 "kicad-libraries:0603" H 5700 3850 60  0001 C CNN
+F 2 "kicad-libraries:R0603" H 5700 3850 60  0001 C CNN
 F 3 "" H 5700 3850 60  0000 C CNN
 	1    5700 3850
 	1    0    0    -1  
