@@ -20,7 +20,7 @@ UVLightReachedCB[sender_,uvLight_]:=
   Print["UV Index > 3. Use sunscreen!"]
  ]
 
-AddEventHandler[uvl@UVLightReached,UVLightReachedCB]
+AddEventHandler[uvl@UVLightReachedCallback,UVLightReachedCB]
 
 (*Configure threshold for UV light "greater than 750 µW/cm²" (unit is µW/cm²)*)
 option=Tinkerforge`BrickletUVLight`THRESHOLDUOPTIONUGREATER

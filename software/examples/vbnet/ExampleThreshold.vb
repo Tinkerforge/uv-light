@@ -23,7 +23,7 @@ Module ExampleThreshold
         uvl.SetDebouncePeriod(10000)
 
         ' Register UV light reached callback to subroutine UVLightReachedCB
-        AddHandler uvl.UVLightReached, AddressOf UVLightReachedCB
+        AddHandler uvl.UVLightReachedCallback, AddressOf UVLightReachedCB
 
         ' Configure threshold for uv_light "greater than 750 µW/cm²" (unit is µW/cm²)
         uvl.SetUVLightCallbackThreshold(">"C, 750, 0)

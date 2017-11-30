@@ -19,7 +19,7 @@ Module ExampleCallback
         ' Don't use device before ipcon is connected
 
         ' Register UV light callback to subroutine UVLightCB
-        AddHandler uvl.UVLight, AddressOf UVLightCB
+        AddHandler uvl.UVLightCallback, AddressOf UVLightCB
 
         ' Set period for UV light callback to 1s (1000ms)
         ' Note: The UV light callback is only called every second

@@ -13,7 +13,7 @@ ipcon@Connect[host,port]
 (*Callback function for UV light callback (parameter has unit µW/cm²)*)
 UVLightCB[sender_,uvLight_]:=
  Print["UV Light: "<>ToString[N[Quantity[uvLight,"µW/cm²"]]]]
-AddEventHandler[uvl@UVLight,UVLightCB]
+AddEventHandler[uvl@UVLightCallback,UVLightCB]
 
 (*Set period for UV light callback to 1s (1000ms)*)
 (*Note: The UV light callback is only called every second*)
