@@ -3,7 +3,7 @@
 
 uid=XYZ # Change XYZ to the UID of your UV Light Bricklet
 
-# Handle incoming UV light callbacks (parameter has unit µW/cm²)
+# Handle incoming UV light callbacks
 tinkerforge dispatch uv-light-bricklet $uid uv-light &
 
 # Set period for UV light callback to 1s (1000ms)

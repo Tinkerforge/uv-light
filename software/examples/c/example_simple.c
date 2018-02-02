@@ -23,7 +23,7 @@ int main(void) {
 	}
 	// Don't use device before ipcon is connected
 
-	// Get current UV light (unit is µW/cm²)
+	// Get current UV light
 	uint32_t uv_light;
 	if(uv_light_get_uv_light(&uvl, &uv_light) < 0) {
 		fprintf(stderr, "Could not get UV light, probably timeout\n");

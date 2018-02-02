@@ -8,7 +8,7 @@ UID = "XYZ" # Change XYZ to the UID of your UV Light Bricklet
 from tinkerforge.ip_connection import IPConnection
 from tinkerforge.bricklet_uv_light import BrickletUVLight
 
-# Callback function for UV light callback (parameter has unit µW/cm²)
+# Callback function for UV light callback
 def cb_uv_light(uv_light):
     print("UV Light: " + str(uv_light) + " µW/cm²")
 

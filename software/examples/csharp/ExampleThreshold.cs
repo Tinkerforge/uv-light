@@ -7,7 +7,7 @@ class Example
 	private static int PORT = 4223;
 	private static string UID = "XYZ"; // Change XYZ to the UID of your UV Light Bricklet
 
-	// Callback function for UV light reached callback (parameter has unit µW/cm²)
+	// Callback function for UV light reached callback
 	static void UVLightReachedCB(BrickletUVLight sender, long uvLight)
 	{
 		Console.WriteLine("UV Light: " + uvLight + " µW/cm²");
@@ -28,7 +28,7 @@ class Example
 		// Register UV light reached callback to function UVLightReachedCB
 		uvl.UVLightReachedCallback += UVLightReachedCB;
 
-		// Configure threshold for UV light "greater than 750 µW/cm²" (unit is µW/cm²)
+		// Configure threshold for UV light "greater than 750 µW/cm²"
 		uvl.SetUVLightCallbackThreshold('>', 750, 0);
 
 		Console.WriteLine("Press enter to exit");

@@ -16,7 +16,7 @@ uvl = BrickletUVLight.new UID, ipcon # Create device object
 ipcon.connect HOST, PORT # Connect to brickd
 # Don't use device before ipcon is connected
 
-# Register UV light callback (parameter has unit µW/cm²)
+# Register UV light callback
 uvl.register_callback(BrickletUVLight::CALLBACK_UV_LIGHT) do |uv_light|
   puts "UV Light: #{uv_light} µW/cm²"
 end

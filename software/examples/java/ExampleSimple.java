@@ -17,7 +17,7 @@ public class ExampleSimple {
 		ipcon.connect(HOST, PORT); // Connect to brickd
 		// Don't use device before ipcon is connected
 
-		// Get current UV light (unit is µW/cm²)
+		// Get current UV light
 		long uvLight = uvl.getUVLight(); // Can throw com.tinkerforge.TimeoutException
 		System.out.println("UV Light: " + uvLight + " µW/cm²");
 

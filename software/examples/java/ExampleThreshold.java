@@ -20,7 +20,7 @@ public class ExampleThreshold {
 		// Get threshold callbacks with a debounce time of 10 seconds (10000ms)
 		uvl.setDebouncePeriod(10000);
 
-		// Add UV light reached listener (parameter has unit µW/cm²)
+		// Add UV light reached listener
 		uvl.addUVLightReachedListener(new BrickletUVLight.UVLightReachedListener() {
 			public void uvLightReached(long uvLight) {
 				System.out.println("UV Light: " + uvLight + " µW/cm²");
@@ -28,7 +28,7 @@ public class ExampleThreshold {
 			}
 		});
 
-		// Configure threshold for UV light "greater than 750 µW/cm²" (unit is µW/cm²)
+		// Configure threshold for UV light "greater than 750 µW/cm²"
 		uvl.setUVLightCallbackThreshold('>', 750, 0);
 
 		System.out.println("Press key to exit"); System.in.read();

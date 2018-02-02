@@ -16,7 +16,7 @@ uvl = BrickletUVLight.new UID, ipcon # Create device object
 ipcon.connect HOST, PORT # Connect to brickd
 # Don't use device before ipcon is connected
 
-# Get current UV light (unit is µW/cm²)
+# Get current UV light
 uv_light = uvl.get_uv_light
 puts "UV Light: #{uv_light} µW/cm²"
 

@@ -19,14 +19,14 @@ ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
         // Get threshold callbacks with a debounce time of 10 seconds (10000ms)
         uvl.setDebouncePeriod(10000);
 
-        // Configure threshold for UV light "greater than 750 µW/cm²" (unit is µW/cm²)
+        // Configure threshold for UV light "greater than 750 µW/cm²"
         uvl.setUVLightCallbackThreshold('>', 750, 0);
     }
 );
 
 // Register UV light reached callback
 uvl.on(Tinkerforge.BrickletUVLight.CALLBACK_UV_LIGHT_REACHED,
-    // Callback function for UV light reached callback (parameter has unit µW/cm²)
+    // Callback function for UV light reached callback
     function (uvLight) {
         console.log('UV Light: ' + uvLight + ' µW/cm²');
         console.log('UV Index > 3. Use sunscreen!');

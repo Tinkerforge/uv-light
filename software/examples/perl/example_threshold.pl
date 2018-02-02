@@ -7,7 +7,7 @@ use constant HOST => 'localhost';
 use constant PORT => 4223;
 use constant UID => 'XYZ'; # Change XYZ to the UID of your UV Light Bricklet
 
-# Callback subroutine for UV light reached callback (parameter has unit µW/cm²)
+# Callback subroutine for UV light reached callback
 sub cb_uv_light_reached
 {
     my ($uv_light) = @_;
@@ -28,7 +28,7 @@ $uvl->set_debounce_period(10000);
 # Register UV light reached callback to subroutine cb_uv_light_reached
 $uvl->register_callback($uvl->CALLBACK_UV_LIGHT_REACHED, 'cb_uv_light_reached');
 
-# Configure threshold for UV light "greater than 750 µW/cm²" (unit is µW/cm²)
+# Configure threshold for UV light "greater than 750 µW/cm²"
 $uvl->set_uv_light_callback_threshold('>', 750, 0);
 
 print "Press key to exit\n";

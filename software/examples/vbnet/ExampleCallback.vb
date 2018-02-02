@@ -6,7 +6,7 @@ Module ExampleCallback
     Const PORT As Integer = 4223
     Const UID As String = "XYZ" ' Change XYZ to the UID of your UV Light Bricklet
 
-    ' Callback subroutine for UV light callback (parameter has unit µW/cm²)
+    ' Callback subroutine for UV light callback
     Sub UVLightCB(ByVal sender As BrickletUVLight, ByVal uvLight As Long)
         Console.WriteLine("UV Light: " + uvLight.ToString() + " µW/cm²")
     End Sub

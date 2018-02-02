@@ -16,7 +16,7 @@ $uvl = new BrickletUVLight(UID, $ipcon); // Create device object
 $ipcon->connect(HOST, PORT); // Connect to brickd
 // Don't use device before ipcon is connected
 
-// Get current UV light (unit is µW/cm²)
+// Get current UV light
 $uv_light = $uvl->getUVLight();
 echo "UV Light: $uv_light µW/cm²\n";
 

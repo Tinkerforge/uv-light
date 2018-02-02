@@ -25,7 +25,7 @@ ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
 
 // Register UV light callback
 uvl.on(Tinkerforge.BrickletUVLight.CALLBACK_UV_LIGHT,
-    // Callback function for UV light callback (parameter has unit µW/cm²)
+    // Callback function for UV light callback
     function (uvLight) {
         console.log('UV Light: ' + uvLight + ' µW/cm²');
     }

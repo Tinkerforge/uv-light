@@ -36,7 +36,7 @@ begin
   ipcon.Connect(HOST, PORT);
   { Don't use device before ipcon is connected }
 
-  { Get current UV light (unit is µW/cm²) }
+  { Get current UV light }
   uvLight := uvl.GetUVLight;
   WriteLn(Format('UV Light: %d µW/cm²', [uvLight]));
 

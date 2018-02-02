@@ -24,7 +24,7 @@ const
 var
   e: TExample;
 
-{ Callback procedure for UV light callback (parameter has unit µW/cm²) }
+{ Callback procedure for UV light callback }
 procedure TExample.UVLightCB(sender: TBrickletUVLight; const uvLight: longword);
 begin
   WriteLn(Format('UV Light: %d µW/cm²', [uvLight]));

@@ -23,7 +23,7 @@ function octave_example_callback()
     ipcon.disconnect();
 end
 
-% Callback function for UV light callback (parameter has unit µW/cm²)
+% Callback function for UV light callback
 function cb_uv_light(e)
     fprintf("UV Light: %d µW/cm²\n", java2int(e.uvLight));
 end

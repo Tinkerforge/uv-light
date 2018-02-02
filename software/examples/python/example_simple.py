@@ -15,7 +15,7 @@ if __name__ == "__main__":
     ipcon.connect(HOST, PORT) # Connect to brickd
     # Don't use device before ipcon is connected
 
-    # Get current UV light (unit is µW/cm²)
+    # Get current UV light
     uv_light = uvl.get_uv_light()
     print("UV Light: " + str(uv_light) + " µW/cm²")
 

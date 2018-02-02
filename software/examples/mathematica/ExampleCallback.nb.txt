@@ -10,7 +10,7 @@ ipcon=NETNew["Tinkerforge.IPConnection"]
 uvl=NETNew["Tinkerforge.BrickletUVLight",uid,ipcon]
 ipcon@Connect[host,port]
 
-(*Callback function for UV light callback (parameter has unit µW/cm²)*)
+(*Callback function for UV light callback*)
 UVLightCB[sender_,uvLight_]:=
  Print["UV Light: "<>ToString[N[Quantity[uvLight,"µW/cm²"]]]]
 AddEventHandler[uvl@UVLightCallback,UVLightCB]

@@ -10,7 +10,7 @@ const HOST = 'localhost';
 const PORT = 4223;
 const UID = 'XYZ'; // Change XYZ to the UID of your UV Light Bricklet
 
-// Callback function for UV light callback (parameter has unit µW/cm²)
+// Callback function for UV light callback
 function cb_uvLight($uv_light)
 {
     echo "UV Light: $uv_light µW/cm²\n";

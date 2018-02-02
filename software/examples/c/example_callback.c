@@ -7,7 +7,7 @@
 #define PORT 4223
 #define UID "XYZ" // Change XYZ to the UID of your UV Light Bricklet
 
-// Callback function for UV light callback (parameter has unit µW/cm²)
+// Callback function for UV light callback
 void cb_uv_light(uint32_t uv_light, void *user_data) {
 	(void)user_data; // avoid unused parameter warning
 

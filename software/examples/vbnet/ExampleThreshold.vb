@@ -6,7 +6,7 @@ Module ExampleThreshold
     Const PORT As Integer = 4223
     Const UID As String = "XYZ" ' Change XYZ to the UID of your UV Light Bricklet
 
-    ' Callback subroutine for UV light reached callback (parameter has unit µW/cm²)
+    ' Callback subroutine for UV light reached callback
     Sub UVLightReachedCB(ByVal sender As BrickletUVLight, ByVal uvLight As Long)
         Console.WriteLine("UV Light: " + uvLight.ToString() + " µW/cm²")
         Console.WriteLine("UV Index > 3. Use sunscreen!")
@@ -25,7 +25,7 @@ Module ExampleThreshold
         ' Register UV light reached callback to subroutine UVLightReachedCB
         AddHandler uvl.UVLightReachedCallback, AddressOf UVLightReachedCB
 
-        ' Configure threshold for uv_light "greater than 750 µW/cm²" (unit is µW/cm²)
+        ' Configure threshold for uv_light "greater than 750 µW/cm²"
         uvl.SetUVLightCallbackThreshold(">"C, 750, 0)
 
         Console.WriteLine("Press key to exit")

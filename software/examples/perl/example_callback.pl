@@ -7,7 +7,7 @@ use constant HOST => 'localhost';
 use constant PORT => 4223;
 use constant UID => 'XYZ'; # Change XYZ to the UID of your UV Light Bricklet
 
-# Callback subroutine for UV light callback (parameter has unit µW/cm²)
+# Callback subroutine for UV light callback
 sub cb_uv_light
 {
     my ($uv_light) = @_;

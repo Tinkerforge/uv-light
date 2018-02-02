@@ -11,7 +11,7 @@ function octave_example_simple()
     ipcon.connect(HOST, PORT); % Connect to brickd
     % Don't use device before ipcon is connected
 
-    % Get current UV light (unit is µW/cm²)
+    % Get current UV light
     uvLight = uvl.getUVLight();
     fprintf("UV Light: %d µW/cm²\n", java2int(uvLight));
 

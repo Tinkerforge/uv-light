@@ -13,7 +13,7 @@ ipcon@Connect[host,port]
 (*Get threshold callbacks with a debounce time of 10 seconds (10000ms)*)
 uvl@SetDebouncePeriod[10000]
 
-(*Callback function for UV light reached callback (parameter has unit µW/cm²)*)
+(*Callback function for UV light reached callback*)
 UVLightReachedCB[sender_,uvLight_]:=
  Module[{},
   Print["UV Light: "<>ToString[N[Quantity[uvLight,"µW/cm²"]]]];
@@ -22,7 +22,7 @@ UVLightReachedCB[sender_,uvLight_]:=
 
 AddEventHandler[uvl@UVLightReachedCallback,UVLightReachedCB]
 
-(*Configure threshold for UV light "greater than 750 µW/cm²" (unit is µW/cm²)*)
+(*Configure threshold for UV light "greater than 750 µW/cm²"*)
 option=Tinkerforge`BrickletUVLight`THRESHOLDUOPTIONUGREATER
 uvl@SetUVLightCallbackThreshold[option,750,0]
 

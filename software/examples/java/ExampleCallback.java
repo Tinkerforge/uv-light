@@ -17,7 +17,7 @@ public class ExampleCallback {
 		ipcon.connect(HOST, PORT); // Connect to brickd
 		// Don't use device before ipcon is connected
 
-		// Add UV light listener (parameter has unit µW/cm²)
+		// Add UV light listener
 		uvl.addUVLightListener(new BrickletUVLight.UVLightListener() {
 			public void uvLight(long uvLight) {
 				System.out.println("UV Light: " + uvLight + " µW/cm²");

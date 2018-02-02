@@ -24,7 +24,7 @@ const
 var
   e: TExample;
 
-{ Callback procedure for UV light reached callback (parameter has unit µW/cm²) }
+{ Callback procedure for UV light reached callback }
 procedure TExample.UVLightReachedCB(sender: TBrickletUVLight; const uvLight: longword);
 begin
   WriteLn(Format('UV Light: %d µW/cm²', [uvLight]));
@@ -49,7 +49,7 @@ begin
   { Register UV light reached callback to procedure UVLightReachedCB }
   uvl.OnUVLightReached := {$ifdef FPC}@{$endif}UVLightReachedCB;
 
-  { Configure threshold for UV light "greater than 750 µW/cm²" (unit is µW/cm²) }
+  { Configure threshold for UV light "greater than 750 µW/cm²" }
   uvl.SetUVLightCallbackThreshold('>', 750, 0);
 
   WriteLn('Press key to exit');

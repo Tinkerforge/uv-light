@@ -16,7 +16,7 @@ ipcon.connect(HOST, PORT,
 
 ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
     function (connectReason) {
-        // Get current UV light (unit is µW/cm²)
+        // Get current UV light
         uvl.getUVLight(
             function (uvLight) {
                 console.log('UV Light: ' + uvLight + ' µW/cm²');

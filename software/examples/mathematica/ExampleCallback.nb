@@ -18,7 +18,7 @@ Notebook[{
    RowBox[{"ipcon", "@", RowBox[{"Connect", "[", RowBox[{"host", ",", "port"}], "]"}]}],
    RowBox[{"
 "}],
-   RowBox[{"(*", "Callback function for UV light callback (parameter has unit \.b5W/cm\.b2)", "*)"}],
+   RowBox[{"(*", "Callback function for UV light callback", "*)"}],
    RowBox[{RowBox[{"UVLightCB", "[", RowBox[{"sender_", ",", "uvLight_"}], "]"}], ":=", "\[IndentingNewLine]", RowBox[{"Print", "[", RowBox[{"\"\<UV Light: \>\"", "<>", RowBox[{"ToString", "[", RowBox[{"N", "[", RowBox[{"Quantity", "[", RowBox[{"uvLight", ",", "\"\<\.b5W/cm\.b2\>\""}], "]"}], "]"}], "]"}]}], "]"}]}],
    RowBox[{"AddEventHandler", "[", RowBox[{RowBox[{"uvl", "@", "UVLightCallback"}], ",", "UVLightCB"}], "]"}],
    RowBox[{"

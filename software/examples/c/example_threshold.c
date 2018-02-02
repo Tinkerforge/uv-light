@@ -7,7 +7,7 @@
 #define PORT 4223
 #define UID "XYZ" // Change XYZ to the UID of your UV Light Bricklet
 
-// Callback function for UV light reached callback (parameter has unit µW/cm²)
+// Callback function for UV light reached callback
 void cb_uv_light_reached(uint32_t uv_light, void *user_data) {
 	(void)user_data; // avoid unused parameter warning
 
@@ -40,7 +40,7 @@ int main(void) {
 	                           (void *)cb_uv_light_reached,
 	                           NULL);
 
-	// Configure threshold for UV light "greater than 750 µW/cm²" (unit is µW/cm²)
+	// Configure threshold for UV light "greater than 750 µW/cm²"
 	uv_light_set_uv_light_callback_threshold(&uvl, '>', 750, 0);
 
 	printf("Press key to exit\n");

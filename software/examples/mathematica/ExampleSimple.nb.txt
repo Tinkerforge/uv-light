@@ -10,7 +10,7 @@ ipcon=NETNew["Tinkerforge.IPConnection"]
 uvl=NETNew["Tinkerforge.BrickletUVLight",uid,ipcon]
 ipcon@Connect[host,port]
 
-(*Get current UV light (unit is µW/cm²)*)
+(*Get current UV light*)
 Print["UV Light: "<>ToString[N[Quantity[uvl@GetUVLight[],"µW/cm²"]]]]
 
 (*Clean up*)

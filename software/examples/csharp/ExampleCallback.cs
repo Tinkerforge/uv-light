@@ -7,7 +7,7 @@ class Example
 	private static int PORT = 4223;
 	private static string UID = "XYZ"; // Change XYZ to the UID of your UV Light Bricklet
 
-	// Callback function for UV light callback (parameter has unit µW/cm²)
+	// Callback function for UV light callback
 	static void UVLightCB(BrickletUVLight sender, long uvLight)
 	{
 		Console.WriteLine("UV Light: " + uvLight + " µW/cm²");

@@ -15,7 +15,7 @@ class Example
 		ipcon.Connect(HOST, PORT); // Connect to brickd
 		// Don't use device before ipcon is connected
 
-		// Get current UV light (unit is µW/cm²)
+		// Get current UV light
 		long uvLight = uvl.GetUVLight();
 		Console.WriteLine("UV Light: " + uvLight + " µW/cm²");
 
