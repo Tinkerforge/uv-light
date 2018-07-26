@@ -110,11 +110,10 @@ uint32_t veml6070_read_uv_light(void) {
 	uv_value |= (i2c_recv_byte(false) << 8);
 	i2c_stop();
 
-	// 1 step = 5 µW/cm²
 	// 187 steps per 1 UVI at 270k/IT=1T (according to application note table 2)
-	// Thus we can multiply by 250 (*25 for UVI to mW/m² and *10 for mW/m² to µW/cm²)
-	// and divide by 187 (see above) to get a unit of µW/cm²
-	return uv_value*250/187;
+	// Thus we can multiply by 250 (*25 for UVI to mW/m² and *10 for mW/m² to 1/10 mW/m²)
+	// and divide by 187 (see above) to get a unit of 1/10 mW/m²
+	return uv_value * 250 / 187;
 }
 
 void veml6070_write_configuration(const uint8_t configuration) {
