@@ -13,7 +13,7 @@ sub cb_uv_light
 {
     my ($uv_light) = @_;
 
-    print "UV Light: $uv_light µW/cm²\n";
+    print "UV Light: " . $uv_light/10.0 . " mW/m²\n";
 }
 
 my $ipcon = Tinkerforge::IPConnection->new(); # Create IP connection

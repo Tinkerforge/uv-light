@@ -14,7 +14,7 @@ function matlab_example_simple()
 
     % Get current UV light
     uvLight = uvl.getUVLight();
-    fprintf('UV Light: %i µW/cm²\n', uvLight);
+    fprintf('UV Light: %g mW/m²\n', uvLight/10.0);
 
     input('Press key to exit\n', 's');
     ipcon.disconnect();

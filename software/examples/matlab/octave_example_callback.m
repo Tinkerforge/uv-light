@@ -25,7 +25,7 @@ end
 
 % Callback function for UV light callback
 function cb_uv_light(e)
-    fprintf("UV Light: %d µW/cm²\n", java2int(e.uvLight));
+    fprintf("UV Light: %g mW/m²\n", java2int(e.uvLight)/10.0);
 end
 
 function int = java2int(value)

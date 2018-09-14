@@ -13,7 +13,7 @@ function octave_example_simple()
 
     % Get current UV light
     uvLight = uvl.getUVLight();
-    fprintf("UV Light: %d µW/cm²\n", java2int(uvLight));
+    fprintf("UV Light: %g mW/m²\n", java2int(uvLight)/10.0);
 
     input("Press key to exit\n", "s");
     ipcon.disconnect();

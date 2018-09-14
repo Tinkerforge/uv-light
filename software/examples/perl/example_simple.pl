@@ -16,7 +16,7 @@ $ipcon->connect(&HOST, &PORT); # Connect to brickd
 
 # Get current UV light
 my $uv_light = $uvl->get_uv_light();
-print "UV Light: $uv_light µW/cm²\n";
+print "UV Light: " . $uv_light/10.0 . " mW/m²\n";
 
 print "Press key to exit\n";
 <STDIN>;

@@ -13,7 +13,7 @@ const UID = 'XYZ'; // Change XYZ to the UID of your UV Light Bricklet
 // Callback function for UV light callback
 function cb_uvLight($uv_light)
 {
-    echo "UV Light: $uv_light µW/cm²\n";
+    echo "UV Light: " . $uv_light/10.0 . " mW/m²\n";
 }
 
 $ipcon = new IPConnection(); // Create IP connection

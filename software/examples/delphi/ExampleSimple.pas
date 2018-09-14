@@ -38,7 +38,7 @@ begin
 
   { Get current UV light }
   uvLight := uvl.GetUVLight;
-  WriteLn(Format('UV Light: %d µW/cm²', [uvLight]));
+  WriteLn(Format('UV Light: %f mW/m²', [uvLight/10.0]));
 
   WriteLn('Press key to exit');
   ReadLn;

@@ -19,7 +19,7 @@ Notebook[{
    RowBox[{"
 "}],
    RowBox[{"(*", "Callback function for UV light callback", "*)"}],
-   RowBox[{RowBox[{"UVLightCB", "[", RowBox[{"sender_", ",", "uvLight_"}], "]"}], ":=", "\[IndentingNewLine]", RowBox[{"Print", "[", RowBox[{"\"\<UV Light: \>\"", "<>", RowBox[{"ToString", "[", RowBox[{"N", "[", RowBox[{"Quantity", "[", RowBox[{"uvLight", ",", "\"\<\.b5W/cm\.b2\>\""}], "]"}], "]"}], "]"}]}], "]"}]}],
+   RowBox[{RowBox[{"UVLightCB", "[", RowBox[{"sender_", ",", "uvLight_"}], "]"}], ":=", "\[IndentingNewLine]", RowBox[{"Print", "[", RowBox[{"\"\<UV Light: \>\"", "<>", RowBox[{"ToString", "[", RowBox[{"N", "[", RowBox[{"Quantity", "[", RowBox[{"uvLight", ",", "\"\<mW/m\.b2/10\>\""}], "]"}], "]"}], "]"}]}], "]"}]}],
    RowBox[{"AddEventHandler", "[", RowBox[{RowBox[{"uvl", "@", "UVLightCallback"}], ",", "UVLightCB"}], "]"}],
    RowBox[{"
 "}],

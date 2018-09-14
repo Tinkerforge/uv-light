@@ -18,7 +18,7 @@ $ipcon->connect(HOST, PORT); // Connect to brickd
 
 // Get current UV light
 $uv_light = $uvl->getUVLight();
-echo "UV Light: $uv_light µW/cm²\n";
+echo "UV Light: " . $uv_light/10.0 . " mW/m²\n";
 
 echo "Press key to exit\n";
 fgetc(fopen('php://stdin', 'r'));

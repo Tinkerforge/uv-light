@@ -8,7 +8,7 @@ Module ExampleThreshold
 
     ' Callback subroutine for UV light reached callback
     Sub UVLightReachedCB(ByVal sender As BrickletUVLight, ByVal uvLight As Long)
-        Console.WriteLine("UV Light: " + uvLight.ToString() + " µW/cm²")
+        Console.WriteLine("UV Light: " + (uvLight/10.0).ToString() + " mW/m²")
         Console.WriteLine("UV Index > 3. Use sunscreen!")
     End Sub
 
@@ -25,8 +25,8 @@ Module ExampleThreshold
         ' Register UV light reached callback to subroutine UVLightReachedCB
         AddHandler uvl.UVLightReachedCallback, AddressOf UVLightReachedCB
 
-        ' Configure threshold for uv_light "greater than 750 µW/cm²"
-        uvl.SetUVLightCallbackThreshold(">"C, 750, 0)
+        ' Configure threshold for uv_light "greater than 75 mW/m²"
+        uvl.SetUVLightCallbackThreshold(">"C, 75*10, 0)
 
         Console.WriteLine("Press key to exit")
         Console.ReadLine()

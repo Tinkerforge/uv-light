@@ -19,7 +19,7 @@ public class ExampleSimple {
 
 		// Get current UV light
 		long uvLight = uvl.getUVLight(); // Can throw com.tinkerforge.TimeoutException
-		System.out.println("UV Light: " + uvLight + " µW/cm²");
+		System.out.println("UV Light: " + uvLight/10.0 + " mW/m²");
 
 		System.out.println("Press key to exit"); System.in.read();
 		ipcon.disconnect();

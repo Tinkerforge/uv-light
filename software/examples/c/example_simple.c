@@ -30,7 +30,7 @@ int main(void) {
 		return 1;
 	}
 
-	printf("UV Light: %u µW/cm²\n", uv_light);
+	printf("UV Light: %f mW/m²\n", uv_light/10.0);
 
 	printf("Press key to exit\n");
 	getchar();

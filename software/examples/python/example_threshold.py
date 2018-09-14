@@ -10,7 +10,7 @@ from tinkerforge.bricklet_uv_light import BrickletUVLight
 
 # Callback function for UV light reached callback
 def cb_uv_light_reached(uv_light):
-    print("UV Light: " + str(uv_light) + " µW/cm²")
+    print("UV Light: " + str(uv_light/10.0) + " mW/m²")
     print("UV Index > 3. Use sunscreen!")
 
 if __name__ == "__main__":
@@ -26,8 +26,8 @@ if __name__ == "__main__":
     # Register UV light reached callback to function cb_uv_light_reached
     uvl.register_callback(uvl.CALLBACK_UV_LIGHT_REACHED, cb_uv_light_reached)
 
-    # Configure threshold for UV light "greater than 750 µW/cm²"
-    uvl.set_uv_light_callback_threshold(">", 750, 0)
+    # Configure threshold for UV light "greater than 75 mW/m²"
+    uvl.set_uv_light_callback_threshold(">", 75*10, 0)
 
     raw_input("Press key to exit\n") # Use input() in Python 3
     ipcon.disconnect()

@@ -10,7 +10,7 @@ from tinkerforge.bricklet_uv_light import BrickletUVLight
 
 # Callback function for UV light callback
 def cb_uv_light(uv_light):
-    print("UV Light: " + str(uv_light) + " µW/cm²")
+    print("UV Light: " + str(uv_light/10.0) + " mW/m²")
 
 if __name__ == "__main__":
     ipcon = IPConnection() # Create IP connection

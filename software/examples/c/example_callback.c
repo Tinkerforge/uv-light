@@ -11,7 +11,7 @@
 void cb_uv_light(uint32_t uv_light, void *user_data) {
 	(void)user_data; // avoid unused parameter warning
 
-	printf("UV Light: %u µW/cm²\n", uv_light);
+	printf("UV Light: %f mW/m²\n", uv_light/10.0);
 }
 
 int main(void) {

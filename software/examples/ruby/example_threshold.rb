@@ -21,12 +21,12 @@ uvl.set_debounce_period 10000
 
 # Register UV light reached callback
 uvl.register_callback(BrickletUVLight::CALLBACK_UV_LIGHT_REACHED) do |uv_light|
-  puts "UV Light: #{uv_light} µW/cm²"
+  puts "UV Light: #{uv_light/10.0} mW/m²"
   puts 'UV Index > 3. Use sunscreen!'
 end
 
-# Configure threshold for UV light "greater than 750 µW/cm²"
-uvl.set_uv_light_callback_threshold '>', 750, 0
+# Configure threshold for UV light "greater than 75 mW/m²"
+uvl.set_uv_light_callback_threshold '>', 75*10, 0
 
 puts 'Press key to exit'
 $stdin.gets

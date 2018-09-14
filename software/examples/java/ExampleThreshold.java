@@ -23,13 +23,13 @@ public class ExampleThreshold {
 		// Add UV light reached listener
 		uvl.addUVLightReachedListener(new BrickletUVLight.UVLightReachedListener() {
 			public void uvLightReached(long uvLight) {
-				System.out.println("UV Light: " + uvLight + " µW/cm²");
+				System.out.println("UV Light: " + uvLight/10.0 + " mW/m²");
 				System.out.println("UV Index > 3. Use sunscreen!");
 			}
 		});
 
-		// Configure threshold for UV light "greater than 750 µW/cm²"
-		uvl.setUVLightCallbackThreshold('>', 750, 0);
+		// Configure threshold for UV light "greater than 75 mW/m²"
+		uvl.setUVLightCallbackThreshold('>', 75*10, 0);
 
 		System.out.println("Press key to exit"); System.in.read();
 		ipcon.disconnect();

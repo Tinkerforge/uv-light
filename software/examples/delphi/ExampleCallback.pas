@@ -27,7 +27,7 @@ var
 { Callback procedure for UV light callback }
 procedure TExample.UVLightCB(sender: TBrickletUVLight; const uvLight: longword);
 begin
-  WriteLn(Format('UV Light: %d µW/cm²', [uvLight]));
+  WriteLn(Format('UV Light: %f mW/m²', [uvLight/10.0]));
 end;
 
 procedure TExample.Execute;

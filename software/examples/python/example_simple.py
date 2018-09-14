@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     # Get current UV light
     uv_light = uvl.get_uv_light()
-    print("UV Light: " + str(uv_light) + " µW/cm²")
+    print("UV Light: " + str(uv_light/10.0) + " mW/m²")
 
     raw_input("Press key to exit\n") # Use input() in Python 3
     ipcon.disconnect()

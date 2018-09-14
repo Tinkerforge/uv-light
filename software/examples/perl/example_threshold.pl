@@ -13,7 +13,7 @@ sub cb_uv_light_reached
 {
     my ($uv_light) = @_;
 
-    print "UV Light: $uv_light µW/cm²\n";
+    print "UV Light: " . $uv_light/10.0 . " mW/m²\n";
     print "UV Index > 3. Use sunscreen!\n";
 }
 
@@ -29,8 +29,8 @@ $uvl->set_debounce_period(10000);
 # Register UV light reached callback to subroutine cb_uv_light_reached
 $uvl->register_callback($uvl->CALLBACK_UV_LIGHT_REACHED, 'cb_uv_light_reached');
 
-# Configure threshold for UV light "greater than 750 µW/cm²"
-$uvl->set_uv_light_callback_threshold('>', 750, 0);
+# Configure threshold for UV light "greater than 75 mW/m²"
+$uvl->set_uv_light_callback_threshold('>', 75*10, 0);
 
 print "Press key to exit\n";
 <STDIN>;

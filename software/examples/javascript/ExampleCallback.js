@@ -27,7 +27,7 @@ ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
 uvl.on(Tinkerforge.BrickletUVLight.CALLBACK_UV_LIGHT,
     // Callback function for UV light callback
     function (uvLight) {
-        console.log('UV Light: ' + uvLight + ' µW/cm²');
+        console.log('UV Light: ' + uvLight/10.0 + ' mW/m²');
     }
 );
 

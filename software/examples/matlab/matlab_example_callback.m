@@ -26,5 +26,5 @@ end
 
 % Callback function for UV light callback
 function cb_uv_light(e)
-    fprintf('UV Light: %i µW/cm²\n', e.uvLight);
+    fprintf('UV Light: %g mW/m²\n', e.uvLight/10.0);
 end

@@ -18,8 +18,8 @@ function matlab_example_threshold()
     % Register UV light reached callback to function cb_uv_light_reached
     set(uvl, 'UVLightReachedCallback', @(h, e) cb_uv_light_reached(e));
 
-    % Configure threshold for UV light "greater than 750 µW/cm²"
-    uvl.setUVLightCallbackThreshold('>', 750, 0);
+    % Configure threshold for UV light "greater than 75 mW/m²"
+    uvl.setUVLightCallbackThreshold('>', 75*10, 0);
 
     input('Press key to exit\n', 's');
     ipcon.disconnect();
@@ -27,6 +27,6 @@ end
 
 % Callback function for UV light reached callback
 function cb_uv_light_reached(e)
-    fprintf('UV Light: %i µW/cm²\n', e.uvLight);
+    fprintf('UV Light: %g mW/m²\n', e.uvLight/10.0);
     fprintf('UV Index > 3. Use sunscreen!\n');
 end

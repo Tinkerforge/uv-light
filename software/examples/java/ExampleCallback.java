@@ -20,7 +20,7 @@ public class ExampleCallback {
 		// Add UV light listener
 		uvl.addUVLightListener(new BrickletUVLight.UVLightListener() {
 			public void uvLight(long uvLight) {
-				System.out.println("UV Light: " + uvLight + " µW/cm²");
+				System.out.println("UV Light: " + uvLight/10.0 + " mW/m²");
 			}
 		});
 

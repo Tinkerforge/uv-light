@@ -15,7 +15,7 @@ Module ExampleSimple
 
         ' Get current UV light
         Dim uvLight As Long = uvl.GetUVLight()
-        Console.WriteLine("UV Light: " + uvLight.ToString() + " µW/cm²")
+        Console.WriteLine("UV Light: " + (uvLight/10.0).ToString() + " mW/m²")
 
         Console.WriteLine("Press key to exit")
         Console.ReadLine()

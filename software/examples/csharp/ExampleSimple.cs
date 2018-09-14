@@ -17,7 +17,7 @@ class Example
 
 		// Get current UV light
 		long uvLight = uvl.GetUVLight();
-		Console.WriteLine("UV Light: " + uvLight + " µW/cm²");
+		Console.WriteLine("UV Light: " + uvLight/10.0 + " mW/m²");
 
 		Console.WriteLine("Press enter to exit");
 		Console.ReadLine();

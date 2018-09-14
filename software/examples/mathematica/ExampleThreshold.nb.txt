@@ -16,15 +16,15 @@ uvl@SetDebouncePeriod[10000]
 (*Callback function for UV light reached callback*)
 UVLightReachedCB[sender_,uvLight_]:=
  Module[{},
-  Print["UV Light: "<>ToString[N[Quantity[uvLight,"µW/cm²"]]]];
+  Print["UV Light: "<>ToString[N[Quantity[uvLight,"mW/m²/10"]]]];
   Print["UV Index > 3. Use sunscreen!"]
  ]
 
 AddEventHandler[uvl@UVLightReachedCallback,UVLightReachedCB]
 
-(*Configure threshold for UV light "greater than 750 µW/cm²"*)
+(*Configure threshold for UV light "greater than 75 mW/m²"*)
 option=Tinkerforge`BrickletUVLight`THRESHOLDUOPTIONUGREATER
-uvl@SetUVLightCallbackThreshold[option,750,0]
+uvl@SetUVLightCallbackThreshold[option,75*10,0]
 
 Input["Click OK to exit"]
 

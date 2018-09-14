@@ -27,7 +27,7 @@ var
 { Callback procedure for UV light reached callback }
 procedure TExample.UVLightReachedCB(sender: TBrickletUVLight; const uvLight: longword);
 begin
-  WriteLn(Format('UV Light: %d µW/cm²', [uvLight]));
+  WriteLn(Format('UV Light: %f mW/m²', [uvLight/10.0]));
   WriteLn('UV Index > 3. Use sunscreen!');
 end;
 
@@ -49,8 +49,8 @@ begin
   { Register UV light reached callback to procedure UVLightReachedCB }
   uvl.OnUVLightReached := {$ifdef FPC}@{$endif}UVLightReachedCB;
 
-  { Configure threshold for UV light "greater than 750 µW/cm²" }
-  uvl.SetUVLightCallbackThreshold('>', 750, 0);
+  { Configure threshold for UV light "greater than 75 mW/m²" }
+  uvl.SetUVLightCallbackThreshold('>', 75*10, 0);
 
   WriteLn('Press key to exit');
   ReadLn;

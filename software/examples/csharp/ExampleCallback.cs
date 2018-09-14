@@ -10,7 +10,7 @@ class Example
 	// Callback function for UV light callback
 	static void UVLightCB(BrickletUVLight sender, long uvLight)
 	{
-		Console.WriteLine("UV Light: " + uvLight + " µW/cm²");
+		Console.WriteLine("UV Light: " + uvLight/10.0 + " mW/m²");
 	}
 
 	static void Main()

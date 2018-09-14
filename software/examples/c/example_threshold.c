@@ -11,7 +11,7 @@
 void cb_uv_light_reached(uint32_t uv_light, void *user_data) {
 	(void)user_data; // avoid unused parameter warning
 
-	printf("UV Light: %u µW/cm²\n", uv_light);
+	printf("UV Light: %f mW/m²\n", uv_light/10.0);
 	printf("UV Index > 3. Use sunscreen!\n");
 }
 
@@ -40,8 +40,8 @@ int main(void) {
 	                           (void *)cb_uv_light_reached,
 	                           NULL);
 
-	// Configure threshold for UV light "greater than 750 µW/cm²"
-	uv_light_set_uv_light_callback_threshold(&uvl, '>', 750, 0);
+	// Configure threshold for UV light "greater than 75 mW/m²"
+	uv_light_set_uv_light_callback_threshold(&uvl, '>', 75*10, 0);
 
 	printf("Press key to exit\n");
 	getchar();

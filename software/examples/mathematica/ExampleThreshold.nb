@@ -23,15 +23,15 @@ Notebook[{
    RowBox[{"
 "}],
    RowBox[{"(*", "Callback function for UV light reached callback", "*)"}],
-   RowBox[{RowBox[{"UVLightReachedCB", "[", RowBox[{"sender_", ",", "uvLight_"}], "]"}], ":=", "\[IndentingNewLine]", RowBox[{"Module", "[", RowBox[{RowBox[{"{", "}"}], ",", RowBox[{"\[IndentingNewLine]", RowBox[{"Print", "[", RowBox[{"\"\<UV Light: \>\"", "<>", RowBox[{"ToString", "[", RowBox[{"N", "[", RowBox[{"Quantity", "[", RowBox[{"uvLight", ",", "\"\<\.b5W/cm\.b2\>\""}], "]"}], "]"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", RowBox[{"Print", "[", "\"\<UV Index > 3. Use sunscreen!\>\"", "]"}], "\[IndentingNewLine]"}]}], "]"}]}],
+   RowBox[{RowBox[{"UVLightReachedCB", "[", RowBox[{"sender_", ",", "uvLight_"}], "]"}], ":=", "\[IndentingNewLine]", RowBox[{"Module", "[", RowBox[{RowBox[{"{", "}"}], ",", RowBox[{"\[IndentingNewLine]", RowBox[{"Print", "[", RowBox[{"\"\<UV Light: \>\"", "<>", RowBox[{"ToString", "[", RowBox[{"N", "[", RowBox[{"Quantity", "[", RowBox[{"uvLight", ",", "\"\<mW/m\.b2/10\>\""}], "]"}], "]"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", RowBox[{"Print", "[", "\"\<UV Index > 3. Use sunscreen!\>\"", "]"}], "\[IndentingNewLine]"}]}], "]"}]}],
    RowBox[{"
 "}],
    RowBox[{"AddEventHandler", "[", RowBox[{RowBox[{"uvl", "@", "UVLightReachedCallback"}], ",", "UVLightReachedCB"}], "]"}],
    RowBox[{"
 "}],
-   RowBox[{"(*", "Configure threshold for UV light ", "\"\<greater than 750 \.b5W/cm\.b2\>\"", "", "*)"}],
+   RowBox[{"(*", "Configure threshold for UV light ", "\"\<greater than 75 mW/m\.b2\>\"", "", "*)"}],
    RowBox[{"option", "=", "Tinkerforge`BrickletUVLight`THRESHOLDUOPTIONUGREATER"}],
-   RowBox[{"uvl", "@", RowBox[{"SetUVLightCallbackThreshold", "[", RowBox[{"option", ",", "750", ",", "0"}], "]"}]}],
+   RowBox[{"uvl", "@", RowBox[{"SetUVLightCallbackThreshold", "[", RowBox[{"option", ",", RowBox[{"75", "*", "10"}], ",", "0"}], "]"}]}],
    RowBox[{"
 "}],
    RowBox[{"Input", "[", "\"\<Click OK to exit\>\"", "]"}],

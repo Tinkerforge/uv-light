@@ -52,7 +52,7 @@
                 uvl.on(Tinkerforge.BrickletUVLight.CALLBACK_UV_LIGHT,
                     // Callback function for UV light callback
                     function (uvLight) {
-                        textArea.value += 'UV Light: ' + uvLight + ' µW/cm²\n';
+                        textArea.value += 'UV Light: ' + uvLight/10.0 + ' mW/m²\n';
                         textArea.scrollTop = textArea.scrollHeight;
                     }
                 );

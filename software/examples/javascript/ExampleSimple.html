@@ -44,7 +44,7 @@
                         // Get current UV light
                         uvl.getUVLight(
                             function (uvLight) {
-                                textArea.value += 'UV Light: ' + uvLight + ' µW/cm²\n';
+                                textArea.value += 'UV Light: ' + uvLight/10.0 + ' mW/m²\n';
                             },
                             function (error) {
                                 textArea.value += 'Error: ' + error + '\n';

@@ -10,7 +10,7 @@ class Example
 	// Callback function for UV light reached callback
 	static void UVLightReachedCB(BrickletUVLight sender, long uvLight)
 	{
-		Console.WriteLine("UV Light: " + uvLight + " µW/cm²");
+		Console.WriteLine("UV Light: " + uvLight/10.0 + " mW/m²");
 		Console.WriteLine("UV Index > 3. Use sunscreen!");
 	}
 
@@ -28,8 +28,8 @@ class Example
 		// Register UV light reached callback to function UVLightReachedCB
 		uvl.UVLightReachedCallback += UVLightReachedCB;
 
-		// Configure threshold for UV light "greater than 750 µW/cm²"
-		uvl.SetUVLightCallbackThreshold('>', 750, 0);
+		// Configure threshold for UV light "greater than 75 mW/m²"
+		uvl.SetUVLightCallbackThreshold('>', 75*10, 0);
 
 		Console.WriteLine("Press enter to exit");
 		Console.ReadLine();

@@ -18,7 +18,7 @@ ipcon.connect HOST, PORT # Connect to brickd
 
 # Get current UV light
 uv_light = uvl.get_uv_light
-puts "UV Light: #{uv_light} µW/cm²"
+puts "UV Light: #{uv_light/10.0} mW/m²"
 
 puts 'Press key to exit'
 $stdin.gets

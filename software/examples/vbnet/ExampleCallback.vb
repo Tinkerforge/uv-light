@@ -8,7 +8,7 @@ Module ExampleCallback
 
     ' Callback subroutine for UV light callback
     Sub UVLightCB(ByVal sender As BrickletUVLight, ByVal uvLight As Long)
-        Console.WriteLine("UV Light: " + uvLight.ToString() + " µW/cm²")
+        Console.WriteLine("UV Light: " + (uvLight/10.0).ToString() + " mW/m²")
     End Sub
 
     Sub Main()

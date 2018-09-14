@@ -19,7 +19,7 @@ Notebook[{
    RowBox[{"
 "}],
    RowBox[{"(*", "Get current UV light", "*)"}],
-   RowBox[{"Print", "[", RowBox[{"\"\<UV Light: \>\"", "<>", RowBox[{"ToString", "[", RowBox[{"N", "[", RowBox[{"Quantity", "[", RowBox[{RowBox[{"uvl", "@", RowBox[{"GetUVLight", "[", "]"}]}], ",", "\"\<\.b5W/cm\.b2\>\""}], "]"}], "]"}], "]"}]}], "]"}],
+   RowBox[{"Print", "[", RowBox[{"\"\<UV Light: \>\"", "<>", RowBox[{"ToString", "[", RowBox[{"N", "[", RowBox[{"Quantity", "[", RowBox[{RowBox[{"uvl", "@", RowBox[{"GetUVLight", "[", "]"}]}], ",", "\"\<mW/m\.b2/10\>\""}], "]"}], "]"}], "]"}]}], "]"}],
    RowBox[{"
 "}],
    RowBox[{"(*", "Clean up", "*)"}],

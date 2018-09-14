@@ -8,9 +8,9 @@ tinkerforge call uv-light-bricklet $uid set-debounce-period 10000
 
 # Handle incoming UV light reached callbacks
 tinkerforge dispatch uv-light-bricklet $uid uv-light-reached\
- --execute "echo UV Light: {uv_light} µW/cm². UV Index > 3. Use sunscreen!" &
+ --execute "echo UV Light: {uv_light}/10 mW/m². UV Index > 3. Use sunscreen!" &
 
-# Configure threshold for UV light "greater than 750 µW/cm²"
+# Configure threshold for UV light "greater than 75 mW/m²"
 tinkerforge call uv-light-bricklet $uid set-uv-light-callback-threshold threshold-option-greater 750 0
 
 echo "Press key to exit"; read dummy

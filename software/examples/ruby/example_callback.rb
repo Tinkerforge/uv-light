@@ -18,7 +18,7 @@ ipcon.connect HOST, PORT # Connect to brickd
 
 # Register UV light callback
 uvl.register_callback(BrickletUVLight::CALLBACK_UV_LIGHT) do |uv_light|
-  puts "UV Light: #{uv_light} µW/cm²"
+  puts "UV Light: #{uv_light/10.0} mW/m²"
 end
 
 # Set period for UV light callback to 1s (1000ms)
