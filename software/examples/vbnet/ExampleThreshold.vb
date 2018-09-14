@@ -25,7 +25,7 @@ Module ExampleThreshold
         ' Register UV light reached callback to subroutine UVLightReachedCB
         AddHandler uvl.UVLightReachedCallback, AddressOf UVLightReachedCB
 
-        ' Configure threshold for uv_light "greater than 75 mW/m²"
+        ' Configure threshold for UV light "greater than 75 mW/m²"
         uvl.SetUVLightCallbackThreshold(">"C, 75*10, 0)
 
         Console.WriteLine("Press key to exit")
