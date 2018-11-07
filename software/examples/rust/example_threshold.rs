@@ -15,10 +15,10 @@ fn main() -> Result<(), Box<dyn Error>> {
     // Get threshold receivers with a debounce time of 10 seconds (10000ms).
     uvl.set_debounce_period(10000);
 
-    // Create receiver for UV light reached events.
-    let uv_light_reached_receiver = uvl.get_uv_light_reached_receiver();
+    let uv_light_reached_receiver = uvl.get_uv_light_reached_callback_receiver();
 
-    // Spawn thread to handle received events. This thread ends when the `uvl` object
+    // Spawn thread to handle received callback messages.
+    // This thread ends when the `uvl` object
     // is dropped, so there is no need for manual cleanup.
     thread::spawn(move || {
         for uv_light_reached in uv_light_reached_receiver {
