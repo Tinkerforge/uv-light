@@ -19,7 +19,7 @@ func main() {
 	// Don't use device before ipcon is connected.
 
 	uvl.RegisterUVLightCallback(func(uvLight uint32) {
-		fmt.Printf("UV Light: %d mW/m²\n", float64(uvLight)/10.0)
+		fmt.Printf("UV Light: %f mW/m²\n", float64(uvLight)/10.0)
 	})
 
 	// Set period for UV light receiver to 1s (1000ms).

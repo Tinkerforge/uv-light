@@ -22,7 +22,7 @@ func main() {
 	uvl.SetDebouncePeriod(10000)
 
 	uvl.RegisterUVLightReachedCallback(func(uvLight uint32) {
-		fmt.Printf("UV Light: %d mW/m²\n", float64(uvLight)/10.0)
+		fmt.Printf("UV Light: %f mW/m²\n", float64(uvLight)/10.0)
 		fmt.Println("UV Index > 3. Use sunscreen!")
 	})
 
