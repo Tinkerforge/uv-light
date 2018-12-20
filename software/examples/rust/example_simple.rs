@@ -1,6 +1,8 @@
-use std::{error::Error, io};
+use std::{io, error::Error};
 
-use tinkerforge::{ip_connection::IpConnection, uv_light_bricklet::*};
+use tinkerforge::{ip_connection::IpConnection, 
+                  uv_light_bricklet::*};
+
 
 const HOST: &str = "localhost";
 const PORT: u16 = 4223;
@@ -11,11 +13,11 @@ fn main() -> Result<(), Box<dyn Error>> {
     let uvl = UvLightBricklet::new(UID, &ipcon); // Create device object.
 
     ipcon.connect((HOST, PORT)).recv()??; // Connect to brickd.
-                                          // Don't use device before ipcon is connected.
+    // Don't use device before ipcon is connected.
 
-    // Get current UV light.
-    let uv_light = uvl.get_uv_light().recv()?;
-    println!("UV Light: {} mW/m²", uv_light as f32 / 10.0);
+		// Get current UV light.
+let uv_light = uvl.get_uv_light().recv()?;
+		println!("UV Light: {} mW/m²", uv_light as f32 /10.0);
 
     println!("Press enter to exit.");
     let mut _input = String::new();
