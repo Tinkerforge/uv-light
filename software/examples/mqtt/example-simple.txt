@@ -1,0 +1,8 @@
+
+
+# Change XYZ to the UID of your UV Light Bricklet
+
+setup:
+	# Get current UV light
+	subscribe to tinkerforge/response/uv_light/XYZ/get_uv_light
+	publish '' to tinkerforge/request/uv_light_bricklet/XYZ/get_uv_light 
