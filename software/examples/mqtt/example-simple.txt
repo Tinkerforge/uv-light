@@ -3,4 +3,4 @@
 setup:
 	# Get current UV light
 	subscribe to tinkerforge/response/uv_light_bricklet/XYZ/get_uv_light
-	publish '' to tinkerforge/request/uv_light_bricklet/XYZ/get_uv_light 
+	publish '' to tinkerforge/request/uv_light_bricklet/XYZ/get_uv_light
