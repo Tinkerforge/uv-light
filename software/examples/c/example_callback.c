@@ -33,7 +33,7 @@ int main(void) {
 	// Register UV light callback to function cb_uv_light
 	uv_light_register_callback(&uvl,
 	                           UV_LIGHT_CALLBACK_UV_LIGHT,
-	                           (void *)cb_uv_light,
+	                           (void (*)(void))cb_uv_light,
 	                           NULL);
 
 	// Set period for UV light callback to 1s (1000ms)

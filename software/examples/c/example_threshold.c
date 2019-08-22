@@ -37,7 +37,7 @@ int main(void) {
 	// Register UV light reached callback to function cb_uv_light_reached
 	uv_light_register_callback(&uvl,
 	                           UV_LIGHT_CALLBACK_UV_LIGHT_REACHED,
-	                           (void *)cb_uv_light_reached,
+	                           (void (*)(void))cb_uv_light_reached,
 	                           NULL);
 
 	// Configure threshold for UV light "greater than 75 mW/m²"
