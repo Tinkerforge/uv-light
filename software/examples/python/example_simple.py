@@ -19,5 +19,5 @@ if __name__ == "__main__":
     uv_light = uvl.get_uv_light()
     print("UV Light: " + str(uv_light/10.0) + " mW/m²")
 
-    raw_input("Press key to exit\n") # Use input() in Python 3
+    input("Press key to exit\n") # Use raw_input() in Python 2
     ipcon.disconnect()
