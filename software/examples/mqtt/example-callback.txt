@@ -4,7 +4,7 @@ setup:
 	# Handle incoming UV light callbacks
 	subscribe to tinkerforge/callback/uv_light_bricklet/XYZ/uv_light
 	publish '{"register": true}' to tinkerforge/register/uv_light_bricklet/XYZ/uv_light # Register uv_light callback
-	
+
 	# Set period for UV light callback to 1s (1000ms)
 	# Note: The UV light callback is only called every second
 	#       if the UV light has changed since the last call!
